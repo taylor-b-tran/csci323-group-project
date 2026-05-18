@@ -41,6 +41,12 @@ python evaluate.py     # evaluate trained agent
 python plots.py        # generate graphs
 ```
 
+Also, you can see how the taxi actually performs by changing:
+
+```python
+env = make_env(render=True)
+```
+
 ## Results
 
 Output files are saved to `Code/results/`:
