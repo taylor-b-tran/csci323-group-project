@@ -2,7 +2,7 @@ import gymnasium as gym
 from config import SEED
 
 def make_env(seed=SEED, render=False):
-    # Create the taxi v3 training environment
+    """Create and reset a Taxi-v3 Gym environment."""
     if render:
         env = gym.make("Taxi-v3", render_mode="human")
     else:

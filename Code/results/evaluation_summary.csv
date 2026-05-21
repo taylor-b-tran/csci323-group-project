@@ -1,0 +1,5 @@
+Metric,Random Policy,Q-Learning
+Avg Reward,-772.086,7.924
+Avg Steps,196.254,13.076
+Success Rate (%),5.6000000000000005,100.0
+Avg Illegal Actions,64.112,0.0
