@@ -39,8 +39,12 @@ def training():
             
             # Q-Learning update: Q(s, a) = Q(s, a) + alpha * [r + discount_factor * max Q(s', a') - Q(s, a)]
             # Calculate max Q(s', a') - best_next
-            best_next = np.max(q_values[next_obs])
-            q_values[obs, action] += ALPHA * (reward + GAMMA * best_next - q_values[obs, action])
+            if terminated:
+                target = reward                          # Terminal: no future value
+            else:
+                target = reward + GAMMA * np.max(q_values[next_obs])  # Non-terminal: bootstrap
+
+            q_values[obs, action] += ALPHA * (target - q_values[obs, action])
 
             obs = next_obs
             total_reward += reward
